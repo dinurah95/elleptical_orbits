@@ -1,0 +1,27 @@
+A satellite orbiting the earth with period P whose distances of closest and farthest approach are r1 and r2. The satellite’s path traces out an ellipse,
+r(θ)= 1+ecos(θ)/a(1−e^2)=a(1−ecosE)
+
+The formula above assumes polar coordinates (r,θ) in the lane of the orbit with the earth centred on one of the ellipse’s foci. The ratio
+e= (r1-r2)/(r2+r1)= (r1-r2)/2a
+
+defines the eccentricity of the orbit; a is the semi-major axis, and E is the so-called eccentric anomaly.
+
+Kepler worked out the following procedure for determining the location of the satellite at time t, as measured from the moment of closest approach:
+
+Define the mean anomaly M=2πt/P.
+
+Determine the eccentric anomaly E by solving Kepler’s equation, M=E−esinE.
+
+Compute the true anomaly θ from the equation
+​tan θ/2 = (1−e/1+e)^(1/2) tan (E/2)
+ 
+Kepler’s equation is transcendental and has no closed-form solution. It has to be inverted numerically.
+
+In the file " orbit.cpp", we solve Kepler’s equation by finding the root of the function f(E)=E−M−esinE via Newton-Raphson iteration:
+
+E (n+1) := E(n)− f(E (n))/f'(E (n)) = E(n) − (E(n)−M−esinE(n)/1-ecosE(n))
+​
+The view1.gp script gives you the following plots,
+1. distance vs. time
+2. polar angle vs. time
+3. y postion vs. x position
