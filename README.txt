@@ -1,6 +1,6 @@
 Elliptical Orbits
 
-We slove Kepler's equations via Newton-Raphson iteration to visualize a stallite's orbit.
+We solve Kepler's equations via Newton-Raphson iteration to visualize a satellite's orbit.
 
 
 ***Physics***
