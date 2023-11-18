@@ -1,6 +1,11 @@
 Elliptical Orbits
 
-A satellite orbiting the earth with period P whose distances of closest and farthest approach are r1 and r2. The satellite’s path traces out an ellipse,
+We slove Kepler's equations via Newton-Raphson iteration to visualize a stallite's orbit.
+
+
+***Physics***
+
+Consider a satellite orbiting the earth with period P whose distances of closest and farthest approach are r1 and r2, Then the satellite’s path traces out an ellipse,
 r(θ)= 1+ecos(θ)/a(1−e^2)=a(1−ecosE)
 
 The formula above assumes polar coordinates (r,θ) in the lane of the orbit with the earth centred on one of the ellipse’s foci. The ratio
@@ -14,7 +19,8 @@ Kepler worked out the following procedure for determining the location of the sa
  
 Kepler’s equation is transcendental and has no closed-form solution. It has to be inverted numerically.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+***Programm***
 
 In the file " orbit.cpp", we solve Kepler’s equation by finding the root of the function f(E)=E−M−esinE via Newton-Raphson iteration:
 E (n+1) := E(n)− f(E (n))/f'(E (n)) = E(n) − (E(n)−M−esinE(n)/1-ecosE(n))
